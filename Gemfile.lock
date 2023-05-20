@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/grpc/grpc.git
+  revision: ec2a7668e3057529e3256129550d606273ab06d4
+  submodules: true
+  specs:
+    grpc (1.56.0.dev)
+      google-protobuf (~> 3.23)
+      googleapis-common-protos-types (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -81,9 +90,6 @@ GEM
     google-protobuf (3.23.1-x86_64-darwin)
     googleapis-common-protos-types (1.6.0)
       google-protobuf (~> 3.14)
-    grpc (1.54.2-x86_64-darwin)
-      google-protobuf (~> 3.21)
-      googleapis-common-protos-types (~> 1.0)
     grpc-tools (1.54.2)
     i18n (1.13.0)
       concurrent-ruby (~> 1.0)
@@ -166,7 +172,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
-  grpc
+  grpc!
   grpc-tools
   pg (~> 1.1)
   puma (~> 5.0)

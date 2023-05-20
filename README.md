@@ -18,3 +18,6 @@ gem install grpc-tools
 
 protos/marketplace.proto
 
+```
+grpc_tools_ruby_protoc -I /market/config/protos --ruby_out=/market/lib --grpc_out=/market/lib /market/config/protos/marketplace.proto
+```
