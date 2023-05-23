@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package market;
+
+service Marketplace {
+  rpc GetProduct (Identity) returns (Product) {}
+  rpc GetProducts (SearchRequest) returns (stream Product) {}
+  rpc CreateProduct (Product) returns (Identity) {}
+  rpc DeleteProduct (Identity) returns (Product) {}
+}
+
+enum Category {
+  CATEGORY_GENERIC = 0;
+  CATEGORY_PERFORMANCE = 1;
+  CATEGORY_ADVANCE = 2;
+  CATEGORY_BASIC = 3;
+}
+
+message SearchRequest {
+  int32 page = 1;
+  int32 per = 2;
+  string category_eq = 3;
+}
+
+message Product {
+  int64 id = 1;
+  int64 firm_id = 2;
+  Category category = 4;
+  string name = 5;
+  string promo_text = 6;
+  string description = 7;
+  string country = 8;
+  string lang = 9;
+  string icon = 10;
+  int64 price= 11;
+  string created_at = 12;
+}
+
+message Identity {
+  int64 id = 1;
+}
