@@ -10,10 +10,13 @@ class MarketplaceEntrypoint < Marketplace::Service
   end
 
   def get_product(identity, _call)
-
+    product = Product.find_by!(id: identity.id)
+    Marketplace::Product.new product.attributes.symbolize_keys.slice(:name)
   end
 
   def get_products(search_request, _call)
-    Marketplace::Product.new
+    Product.all.map do |product|
+      Marketplace::Product.new product.attributes.symbolize_keys.slice(:id, :name)
+    end.each
   end
 end
