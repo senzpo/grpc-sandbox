@@ -25,4 +25,6 @@ RSpec.describe 'MarketplaceEntrypoint' do
     result = MarketplaceEntrypoint.new.get_products(Marketplace::SearchRequest.new, nil) {}
     expect(result).to be_instance_of(Enumerator)
   end
+
+  # TODO: nil value, error format
 end
